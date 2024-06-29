@@ -1,0 +1,128 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body{
+	height: 100%;
+}
+
+body{
+	font-family: sans-serif;
+	background-color: #951e96;
+	color: #ffffff;
+}
+
+#articleEntry{
+	display: none;
+	position: absolute;
+	top: 100px;
+	right: 100px;
+	bottom: 100px;
+	left: 100px;
+	
+	background-color: #633392;
+	color: #ffffff;
+}
+
+main{
+	display:flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#startDisplay{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#reveal{
+	font-size: 40px;
+	margin-bottom: 150px;
+	text-align: center;
+	display: none;
+}
+
+#revealText{
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 50px;
+	opacity: 0;
+}
+
+#rollButton{
+	border: none;
+	padding: 0px;
+	background: transparent;
+	box-shadow: none;
+	font-size: 150px;
+}
+
+#rollButton:hover{
+	
+}
+
+#articleDisplay{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	display: none;
+}
+
+#article{
+	text-align: center;
+	width: 100%;
+	font-size: 100px;
+	overflow-wrap: break-word; 
+}
+
+#guesses > button{
+	background-color: rgb(92, 87, 247);
+	font-size: 30px;
+	width: 180px;
+	margin: 80px 20px 0px 20px;
+}
+
+#score{
+	display: flex;
+	width: 100%;
+	border-top: 3px #631364 solid;
+	padding: 30px;
+}
+
+#score > div{
+	flex: 1;
+	text-align: center;
+}
+
+#score > div > button{
+	background-color: #d93131;
+	margin-bottom: 10px;
+}
+
+#score > div > p{
+	font-size: 20px;
+}
+
+button, input[type="submit"]{
+	color: #ffffff;
+	border: 1px #000000 solid;
+	padding: 5px 10px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px -13px 17px inset;
+	cursor: pointer;
+	background-color: rgb(92, 87, 247);
+}
+
+button:hover, input[type="submit"]:hover{
+	box-shadow: rgba(0, 0, 0, 0) 0px -13px 17px inset;
+}
+
+#articleInput{
+	
+}

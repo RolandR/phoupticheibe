@@ -1,0 +1,77 @@
+<!doctype html>
+<html allowfullscreen>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>
+			Phoupticheibe
+		</title>
+		<link rel="stylesheet" type="text/css" media="all" href="./style.css" /> 
+	</head>
+	<body>
+		
+		<div id="articleEntry">
+			<form id="articleForm">
+				<h2>Artikel eingeben</h2>
+				<p id="inputtingUser"></p>
+				<input type="text" id="articleInput" autofocus>
+				<input type="submit" id="inputSubmit" value="Los!">
+			</form>
+		</div>
+		
+		<main>
+			<div id="articleDisplay">
+				<p id="article">Phoupticheibe</p>
+				<div id="guesses">
+					<button id="guess0" onclick="guess(0)">Ädu</button>
+					<button id="guess1" onclick="guess(1)">glow</button>
+					<button id="guess2" onclick="guess(2)">draemmli</button>
+				</div>
+			</div>
+			<div id="startDisplay">
+				<div id="reveal">
+					<p>Es war...</p>
+					<p id="revealText">draemmli!</p>
+				</div>
+				<button id="rollButton">🎲</button>
+			</div>
+			<div id="score">
+				<div>
+					<h2>Ädu</h2>
+					<button id="change0" onclick="changeArticle(0)">Ändern</button>
+					<p>Überzeugt: <span id="guessed0">0</span>
+					<p>Gestohlen: <span id="stolen0">0</span>
+					<p>Verloren: <span id="lost0">0</span>
+				</div>
+				<div>
+					<h2>glow</h2>
+					<button id="change1" onclick="changeArticle(1)">Ändern</button>
+					<p>Überzeugt: <span id="guessed1">0</span>
+					<p>Gestohlen: <span id="stolen1">0</span>
+					<p>Verloren: <span id="lost1">0</span>
+				</div>
+				<div>
+					<h2>draemmli</h2>
+					<button id="change2" onclick="changeArticle(2)">Ändern</button>
+					<p>Überzeugt: <span id="guessed2">0</span>
+					<p>Gestohlen: <span id="stolen2">0</span>
+					<p>Verloren: <span id="lost2">0</span>
+				</div>
+			</div>
+		</main>
+	</body>		
+	
+	<script type="text/javascript" src="./cheibe.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
