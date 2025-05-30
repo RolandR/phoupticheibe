@@ -66,6 +66,36 @@ main{
 	
 }
 
+@keyframes spinning{
+	from {
+		transform: rotate(0turn);
+	}
+	to {
+		transform: rotate(-5turn);
+	}
+}
+
+#rollButton.spinning{
+	animation: spinning 3s cubic-bezier(.1, 0, .28, 1);
+}
+
+#drum{
+	transform: rotate(20deg);
+	animation: drumming 0.2s infinite steps(2, start);
+	font-size: 135px;
+	display: none;
+	margin-bottom: -187px;
+}
+
+@keyframes drumming{
+	from {
+		transform: rotate(-20deg);
+	}
+	to {
+		transform: rotate(20deg);
+	}
+}
+
 #articleDisplay{
 	flex: 1;
 	display: flex;
@@ -73,6 +103,17 @@ main{
 	flex-direction: column;
 	justify-content: center;
 	display: none;
+	transition: transform 1s;
+	transform: scale(1);
+}
+
+#articleDisplay.normal{
+	transform: scale(1);
+	
+}
+
+#articleDisplay.shrunk{
+	transform: scale(0);
 }
 
 #article{

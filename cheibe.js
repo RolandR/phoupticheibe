@@ -50,18 +50,39 @@ function changeArticle(id){
 const rollButton = document.getElementById("rollButton");
 
 rollButton.onclick = function(){
+	rollDice();
+}
+
+async function rollDice(){
+	rollButton.className = "spinning";
 	displayedArticleUserId = ~~(Math.random()*3);
 	document.getElementById("article").innerHTML = participants[displayedArticleUserId].article.name;
+	
+	document.getElementById("articleDisplay").className = "shrunk";
+	
+	await new Promise((resolve) => {
+		setTimeout(resolve, 3000);
+	});
+	
+	rollButton.className = "";
 	
 	document.getElementById("articleDisplay").style.display = "flex";
 	document.getElementById("startDisplay").style.display = "none";
 	document.getElementById("revealText").style.opacity = "0";
+	
+	await new Promise((resolve) => {
+		setTimeout(resolve, 20);
+	});
+	
+	document.getElementById("articleDisplay").className = "normal";
 }
 
 function guess(id){
+	document.getElementById("istVon").innerHTML = participants[displayedArticleUserId].article.name;
 	document.getElementById("articleDisplay").style.display = "none";
 	document.getElementById("startDisplay").style.display = "flex";
 	document.getElementById("reveal").style.display = "block";
+	document.getElementById("drum").style.display = "block";
 	
 	document.getElementById("revealText").innerHTML = participants[displayedArticleUserId].name;
 	
@@ -72,17 +93,20 @@ function guess(id){
 	if(id == displayedArticleUserId){
 		document.getElementById("revealText").style.color = "#ffffff";
 		document.getElementById("revealText").innerHTML = "🎉 "+document.getElementById("revealText").innerHTML+" 🎉";
+		document.getElementById("revealText").style.textShadow = "none";
 	} else {
 		participants[id].stolen++;
 		participants[displayedArticleUserId].lost++;
 		document.getElementById("revealText").style.color = "#d93131";
+		document.getElementById("revealText").style.textShadow = "0px 0px 5px white";
 	}
 	
 	setTimeout(function(){
+		document.getElementById("drum").style.display = "none";
 		document.getElementById("revealText").style.opacity = "1";
 		document.getElementById("change"+displayedArticleUserId).style.backgroundColor = "#d93131";
 		updateScore();
-	}, 1000);
+	}, 3000);
 }
 
 function updateScore(){
